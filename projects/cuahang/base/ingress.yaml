@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cuahang-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+    - http:
+        paths:
+          # Routing API & Healthz tới Backend
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /healthz
+            pathType: Exact
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          # Routing giao diện người dùng tới Frontend
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-fe-svc
+                port:
+                  number: 80

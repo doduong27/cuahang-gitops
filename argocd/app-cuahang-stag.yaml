@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cuahang-stag
+  namespace: argocd
+spec:
+  project: cuahang-project
+  source:
+    repoURL: https://github.com/duongdv2/cuahang-gitops.git
+    targetRevision: HEAD
+    path: projects/cuahang/overlays/stag
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cuahang-stag
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

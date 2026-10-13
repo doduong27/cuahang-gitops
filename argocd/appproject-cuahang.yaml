@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cuahang-project
+  namespace: argocd
+spec:
+  description: "Dự án mẫu Cửa Hàng Trực Tuyến - Multi-Environment"
+  sourceRepos:
+    - "*"
+  destinations:
+    - namespace: "cuahang-dev"
+      server: "https://kubernetes.default.svc"
+    - namespace: "cuahang-stag"
+      server: "https://kubernetes.default.svc"
+    - namespace: "cuahang-prod"
+      server: "https://kubernetes.default.svc"
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace

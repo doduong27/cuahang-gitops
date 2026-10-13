@@ -1,0 +1,15 @@
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Master keys (tuyệt đối không commit private key ra Git)
+*.key
+*.pem
+sealed-secrets-master-key.yaml

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cuahang-dev
+  namespace: argocd
+spec:
+  project: cuahang-project
+  source:
+    repoURL: https://github.com/duongdv2/cuahang-gitops.git # Đổi thành link GitHub repo của bạn
+    targetRevision: HEAD
+    path: projects/cuahang/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cuahang-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

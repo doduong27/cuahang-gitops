@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cuahang-be-svc
+  labels:
+    app: cuahang-be
+spec:
+  type: ClusterIP
+  selector:
+    app: cuahang-be
+  ports:
+    - name: http
+      port: 5000
+      targetPort: 5000

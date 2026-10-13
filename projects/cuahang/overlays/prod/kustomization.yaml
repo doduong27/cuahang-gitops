@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: cuahang-prod
+
+resources:
+  - ../../base
+  - secret-db.yaml
+
+replicas:
+  - name: cuahang-be
+    count: 2
+  - name: cuahang-fe
+    count: 2
+
+images:
+  - name: cuahang-be
+    newName: docker.io/duongdv2/cuahang-be
+    newTag: prod-v1.0.0
+  - name: cuahang-fe
+    newName: docker.io/duongdv2/cuahang-fe
+    newTag: prod-v1.0.0
