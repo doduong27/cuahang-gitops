@@ -9,8 +9,8 @@ resources:
 
 images:
   - name: cuahang-be
-    newName: docker.io/duongdv2/cuahang-be
+    newName: docker.io/doduong27/cuahang-be
     newTag: stag-latest
   - name: cuahang-fe
-    newName: docker.io/duongdv2/cuahang-fe
+    newName: docker.io/doduong27/cuahang-fe
     newTag: stag-latest
