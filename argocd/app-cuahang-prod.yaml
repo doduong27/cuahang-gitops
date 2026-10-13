@@ -6,7 +6,7 @@ metadata:
 spec:
   project: cuahang-project
   source:
-    repoURL: https://github.com/duongdv2/cuahang-gitops.git
+    repoURL: https://github.com/doduong27/cuahang-gitops.git
     targetRevision: HEAD
     path: projects/cuahang/overlays/prod
   destination:

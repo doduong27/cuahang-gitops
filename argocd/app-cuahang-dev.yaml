@@ -6,7 +6,7 @@ metadata:
 spec:
   project: cuahang-project
   source:
-    repoURL: https://github.com/duongdv2/cuahang-gitops.git # Đổi thành link GitHub repo của bạn
+    repoURL: https://github.com/doduong27/cuahang-gitops.git
     targetRevision: HEAD
     path: projects/cuahang/overlays/dev
   destination:
