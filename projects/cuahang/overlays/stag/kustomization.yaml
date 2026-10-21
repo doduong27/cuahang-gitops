@@ -4,16 +4,16 @@ kind: Kustomization
 namespace: cuahang-stag
 
 resources:
-  - ../../base
-  - secret-db.yaml
+- ../../base
+- secret-db.yaml
 
 images:
-  - name: cuahang-be
-    newName: docker.io/dvduong/cuahang-be
-    newTag: dev-latest
-  - name: cuahang-fe
-    newName: docker.io/dvduong/cuahang-fe
-    newTag: dev-latest
+- name: cuahang-be
+  newName: docker.io/dvduong/cuahang-be
+  newTag: dev-latest
+- name: cuahang-fe
+  newName: docker.io/dvduong/cuahang-fe
+  newTag: dev-v2
 
 patches:
-  - path: patch-ingress.yaml
+- path: patch-ingress.yaml
