@@ -10,7 +10,7 @@ resources:
 images:
   - name: cuahang-be
     newName: docker.io/dvduong/cuahang-be
-    newTag: stag-latest
+    newTag: dev-latest
   - name: cuahang-fe
     newName: docker.io/dvduong/cuahang-fe
-    newTag: stag-latest
+    newTag: dev-latest

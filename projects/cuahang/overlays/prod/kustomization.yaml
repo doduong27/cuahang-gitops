@@ -16,7 +16,7 @@ replicas:
 images:
   - name: cuahang-be
     newName: docker.io/dvduong/cuahang-be
-    newTag: prod-v1.0.0
+    newTag: dev-latest
   - name: cuahang-fe
     newName: docker.io/dvduong/cuahang-fe
-    newTag: prod-v1.0.0
+    newTag: dev-latest
