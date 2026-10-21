@@ -1,0 +1,77 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cuahang-ingress
+spec:
+  rules:
+    - host: cuahang.lan
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /healthz
+            pathType: Exact
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-fe-svc
+                port:
+                  number: 80
+    - host: prod.cuahang.lan
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /healthz
+            pathType: Exact
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-fe-svc
+                port:
+                  number: 80
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /healthz
+            pathType: Exact
+            backend:
+              service:
+                name: cuahang-be-svc
+                port:
+                  number: 5000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cuahang-fe-svc
+                port:
+                  number: 80
