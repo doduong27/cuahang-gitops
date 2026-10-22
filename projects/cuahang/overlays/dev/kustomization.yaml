@@ -13,7 +13,7 @@ images:
   newTag: v1.0.0
 - name: cuahang-fe
   newName: docker.io/dvduong/cuahang-fe
-  newTag: v2.0.0
+  newTag: v2.0.0-b6
 
 patches:
 - path: patch-ingress.yaml
