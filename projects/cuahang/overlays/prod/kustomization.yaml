@@ -4,22 +4,22 @@ kind: Kustomization
 namespace: cuahang-prod
 
 resources:
-  - ../../base
-  - secret-db.yaml
+- ../../base
+- secret-db.yaml
 
 replicas:
-  - name: cuahang-be
-    count: 2
-  - name: cuahang-fe
-    count: 2
+- count: 2
+  name: cuahang-be
+- count: 2
+  name: cuahang-fe
 
 images:
-  - name: cuahang-be
-    newName: docker.io/dvduong/cuahang-be
-    newTag: v1.0.0
-  - name: cuahang-fe
-    newName: docker.io/dvduong/cuahang-fe
-    newTag: v1.0.0
+- name: cuahang-be
+  newName: docker.io/dvduong/cuahang-be
+  newTag: v1.0.0
+- name: cuahang-fe
+  newName: docker.io/dvduong/cuahang-fe
+  newTag: v2.0.0
 
 patches:
-  - path: patch-ingress.yaml
+- path: patch-ingress.yaml
